@@ -40,10 +40,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-+^#xq=+bi7y$n8(@%sa_1hp(8&%tce#0xo4o4av9rpubc1j0+p'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your-render-domain.onrender.com']
 
 
 # Application definition
@@ -169,3 +172,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+
+# Whitenoise settings
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
